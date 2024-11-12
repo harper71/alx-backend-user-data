@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 """authentication of user data"""
 from flask import request
-from typing import List, TypeVar, Union
+from typing import List, TypeVar, Optional, Union
+
+
+User = TypeVar('User')
 
 
 class Auth:
@@ -27,6 +30,6 @@ class Auth:
         """header autorization"""
         return None
 
-    def current_user(self, request=None) -> TypeVar('User'):
+    def current_user(self, request=None) -> Optional[User]:
         """checks current user"""
         return None
