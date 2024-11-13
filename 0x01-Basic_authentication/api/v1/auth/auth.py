@@ -28,7 +28,11 @@ class Auth:
 
     def authorization_header(self, request=None) -> Union[str, None]:
         """header autorization"""
-        return None
+        if request is None:
+            return None
+        auth_header = request.header.get("Authorization")
+
+        return auth_header if auth_header else None
 
     def current_user(self, request=None) -> Optional[User]:
         """checks current user"""
