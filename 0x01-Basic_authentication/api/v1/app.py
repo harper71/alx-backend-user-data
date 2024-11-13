@@ -23,6 +23,7 @@ if AUTH_TYPE == 'auth':
 
 @app.before_request
 def handles_requests():
+    """handels requests"""
     if auth is None:
         pass
     path_list = ['/api/v1/status/', '/api/v1/unauthorized/', '/api/v1/forbidden/']
